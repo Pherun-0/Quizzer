@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Portal</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        #quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Quiz Selection */
+        #quizSelect {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        #quizSelect:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Start Quiz Button */
+        #startBtn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #startBtn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Timer and Progress Bar */
+        .timer {
+            font-size: 1.2rem;
+            color: #d9534f;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #eee;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #28a745;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        /* Questions and Navigation */
+        .question {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .question h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .question p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .question label {
+            display: block;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 1rem;
+            color: #555;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .question label:hover {
+            background-color: #f1f1f1;
+        }
+
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .option-letter {
+            font-weight: bold;
+            color: #007bff;
+            margin-right: 8px;
+        }
+
+        /* Navigation Buttons */
+        #controls {
+            display: none;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #controls button {
+            flex: 1;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #prevBtn {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        #prevBtn:hover {
+            background-color: #5a6268;
+        }
+
+        #nextBtn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #nextBtn:hover {
+            background-color: #0056b3;
+        }
+
+        #submitBtn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        #submitBtn:hover {
+            background-color: #c82333;
+        }
+
+        /* Results Section */
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9f7ef;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        #result h2 {
+            font-size: 1.5rem;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        #result p {
+            font-size: 1rem;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        #result button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #result button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>LEADS Academy Quiz Portal</h1>
+        
+        <select id="quizSelect">
+            <option value="">-- Select Subject --</option>
+            <option value="lexis_structure.csv">English Quiz</option>
+        </select>
+
+        <button id="startBtn" onclick="startQuiz()">Start Quiz</button>
+
+        <div class="timer" id="timer">Time Remaining: 10:00</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress" style="width: 0%"></div>
+        </div>
+
+        <div id="questions"></div>
+
+        <div id="controls">
+            <button id="prevBtn" onclick="previousQuestion()">Previous</button>
+            <button id="nextBtn" onclick="nextQuestion()">Next</button>
+            <button id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let quizData = [];
+        let userAnswers = [];
+        let timeLeft = 600;
+        let timerInterval;
+        let currentQuestionIndex = 0;
+
+        document.getElementById('quizSelect').addEventListener('change', function() {
+            document.getElementById('startBtn').style.display = this.value ? 'block' : 'none';
+        });
+
+        async function startQuiz() {
+            const quizFile = document.getElementById('quizSelect').value;
+            if (!quizFile) return;
+
+            try {
+                const response = await fetch(`quizzes/${quizFile}`);
+                if (!response.ok) throw new Error('Failed to load quiz file');
+                
+                const csvData = await response.text();
+                const questions = [];
+                
+                const lines = csvData.split('\n').slice(1);
+                for (const line of lines) {
+                    if (line.trim() === '') continue;
+                    
+                    // Advanced CSV parsing with regex
+                    const regex = /(?:,|^)(?:"((?:[^"]|"")*)"|([^",]*))/g;
+                    const columns = [];
+                    let match;
+                    
+                    while ((match = regex.exec(line)) !== null) {
+                        let value = match[1] || match[2];
+                        if (value) value = value.replace(/""/g, '"');
+                        columns.push(value ? value.trim() : '');
+                    }
+
+                    // Skip ID (first column) and parse remaining fields
+                    const [_, question, opt1, opt2, opt3, opt4, correctIndex] = columns;
+                    
+                    questions.push({
+                        question: question,
+                        options: [opt1, opt2, opt3, opt4],
+                        correctAnswer: parseInt(correctIndex)
+                    });
+                }
+
+                quizData = {
+                    title: document.getElementById('quizSelect').selectedOptions[0].text,
+                    questions: shuffleArray(questions).slice(0, 30)
+                };
+                
+                userAnswers = new Array(quizData.questions.length).fill(null);
+                currentQuestionIndex = 0;
+                
+                document.getElementById('controls').style.display = 'flex';
+                showQuestion(currentQuestionIndex);
+                startTimer();
+                updateProgress();
+                
+            } catch (error) {
+                console.error("Quiz Error:", error);
+                alert(`Error loading quiz: ${error.message}`);
+            }
+        }
+
+        function showQuestion(index) {
+            const question = quizData.questions[index];
+            const questionsDiv = document.getElementById('questions');
+            
+            questionsDiv.innerHTML = `
+                <div class="question">
+                    <h3>Question ${index + 1}</h3>
+                    <p>${question.question}</p>
+                    ${question.options.map((option, i) => `
+                        <label>
+                            <input type="radio" name="currentQuestion" value="${i}" 
+                                   ${userAnswers[index] === i ? 'checked' : ''}
+                                   onchange="saveAnswer(${index}, ${i})">
+                            <span class="option-letter">${String.fromCharCode(65 + i)})</span>
+                            ${option}
+                        </label>
+                    `).join('')}
+                </div>
+            `;
+
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === quizData.questions.length - 1;
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < quizData.questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function saveAnswer(questionIndex, optionIndex) {
+            userAnswers[questionIndex] = optionIndex;
+            updateProgress();
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').textContent = 
+                    `Time Remaining: ${Math.floor(timeLeft / 60)}:${(timeLeft % 60).toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) submitQuiz();
+            }, 1000);
+        }
+
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(a => a !== null).length;
+            const progress = (answeredCount / quizData.questions.length) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            
+            const score = quizData.questions.reduce((acc, question, index) => 
+                userAnswers[index] === question.correctAnswer ? acc + 1 : acc, 0);
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <h2>Quiz Completed!</h2>
+                <p>Your Score: ${score}/${quizData.questions.length}</p>
+                <p>Percentage: ${Math.round((score/quizData.questions.length)*100)}%</p>
+                <button onclick="location.reload()">Restart Quiz</button>
+            `;
+            resultDiv.style.display = 'block';
+            document.getElementById('controls').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

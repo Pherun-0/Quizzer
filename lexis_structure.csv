@@ -1,0 +1,101 @@
+id,question,optionA,optionB,optionC,optionD,correctAnswerIndex
+1,"Select the synonym of 'diligent'.","lazy","industrious","apathetic","indifferent",1
+2,"Select the synonym of 'abundant'.","scarce","plentiful","meager","limited",1
+3,"Select the synonym of 'verbose'.","succinct","brief","wordy","laconic",2
+4,"Select the synonym of 'melancholy'.","joyful","happy","sorrowful","excited",2
+5,"Select the synonym of 'exemplary'.","commendable","ordinary","mediocre","flawed",0
+6,"Select the synonym of 'impartial'.","biased","partial","unfair","unbiased",3
+7,"Select the synonym of 'futile'.","productive","effective","useless","beneficial",2
+8,"Select the synonym of 'robust'.","fragile","weak","feeble","strong",3
+9,"Select the synonym of 'novice'.","expert","veteran","beginner","professional",2
+10,"Select the synonym of 'arduous'.","easy","simple","difficult","effortless",2
+11,"Select the synonym of 'elaborate'.","plain","detailed","simple","brief",1
+12,"Select the synonym of 'prudent'.","reckless","impulsive","wise","foolish",2
+13,"Select the synonym of 'coherent'.","confusing","illogical","disorganized","logical",3
+14,"Select the synonym of 'tenacious'.","persistent","yielding","fragile","indifferent",0
+15,"Select the synonym of 'gregarious'.","shy","sociable","introverted","reserved",1
+16,"Select the synonym of 'meticulous'.","careless","sloppy","precise","hasty",2
+17,"Select the synonym of 'candid'.","deceitful","honest","insincere","evasive",1
+18,"Select the synonym of 'plausible'.","believable","absurd","unrealistic","implausible",0
+19,"Select the synonym of 'sparse'.","abundant","dense","scanty","copious",2
+20,"Select the synonym of 'venerable'.","disrespected","modern","respected","contemporary",2
+21,"Select the antonym of 'obsolete'.","antique","modern","outdated","archaic",1
+22,"Select the antonym of 'lucid'.","clear","obscure","transparent","evident",1
+23,"Select the antonym of 'conventional'.","traditional","orthodox","unorthodox","standard",2
+24,"Select the antonym of 'erratic'.","unpredictable","stable","irregular","capricious",1
+25,"Select the antonym of 'inherent'.","intrinsic","essential","extrinsic","innate",2
+26,"Select the antonym of 'plausible'.","credible","believable","implausible","convincing",2
+27,"Select the antonym of 'vivid'.","bright","vibrant","dull","lively",2
+28,"Select the antonym of 'transparent'.","clear","translucent","sheer","opaque",3
+29,"Select the antonym of 'amiable'.","friendly","cordial","unfriendly","genial",2
+30,"Select the antonym of 'abundant'.","plentiful","ample","scarce","copious",2
+31,"Select the antonym of 'superficial'.","shallow","profound","surface","frivolous",1
+32,"Select the antonym of 'indigenous'.","native","aboriginal","foreign","local",2
+33,"Select the antonym of 'intricate'.","complex","complicated","elaborate","simple",3
+34,"Select the antonym of 'prolific'.","productive","fertile","unproductive","fruitful",2
+35,"Select the antonym of 'succinct'.","brief","concise","wordy","terse",2
+36,"Select the antonym of 'benevolent'.","kind","charitable","malevolent","altruistic",2
+37,"Select the antonym of 'arduous'.","difficult","strenuous","easy","laborious",2
+38,"Select the antonym of 'transient'.","temporary","fleeting","ephemeral","permanent",3
+39,"Select the antonym of 'cursory'.","hasty","thorough","superficial","brief",1
+40,"Select the antonym of 'erroneous'.","incorrect","mistaken","accurate","false",2
+41,"Which of the following is a complex sentence?","I like tea.","I like tea and coffee.","Although I was tired, I completed the assignment.","She sings.",2
+42,"Identify the subordinate clause in 'When the rain stopped, we went out'.","we went out","when the rain stopped","the rain stopped","we",1
+43,"Which sentence is a compound sentence?","She laughed because she was happy.","She laughed, and he smiled.","She laughed when she heard the joke.","She laughed softly.",1
+44,"In the sentence 'If you study, you will pass', what is the dependent clause?","you will pass","if you study","study","you",1
+45,"What type of sentence is 'Close the door, please'?","Declarative","Interrogative","Imperative","Exclamatory",2
+46,"Which sentence uses a relative clause?","The book that I bought is interesting.","I bought the book.","The book is interesting.","I bought it yesterday.",0
+47,"Identify the main clause in 'Although it was late, we continued working'.","Although it was late","we continued working","it was late","continued working",1
+48,"What is a compound-complex sentence?","One independent clause","Two independent clauses and one dependent clause","Two independent clauses","One dependent clause",1
+49,"Which sentence is simple?","She danced and sang.","She danced, and she sang.","She danced because she was happy.","She danced and sang while she waited.",0
+50,"Identify the coordinating conjunction in 'I wanted to go, but I was too tired.'","to","but","was","I",1
+51,"Which word is an adjective in 'The tall building collapsed'?","tall","building","collapsed","the",0
+52,"Identify the adverb in 'She quickly finished her homework.'","quickly","finished","her","homework",0
+53,"Which of the following is a noun?","run","happy","beauty","quickly",2
+54,"Identify the pronoun in 'They went to the market.'","They","went","market","to",0
+55,"Which of the following is a preposition in 'The cat sat on the mat'?","cat","on","sat","mat",1
+56,"Identify the verb in the sentence 'She sings beautifully.'","sings","beautifully","she","None",0
+57,"Which of the following is a conjunction?","and","but","or","all of the above",3
+58,"Identify the interjection in 'Wow, that is amazing!'","that","amazing","Wow","is",2
+59,"Which of the following words is a proper noun?","city","London","river","car",1
+60,"In the sentence 'He is a teacher', what is the function of 'a'?","article","noun","verb","adjective",0
+61,"Select the sentence in the subjunctive mood.","If I were rich, I would travel.","I am rich.","I was rich.","I will be rich.",0
+62,"Which is the correct simple present form of the verb 'to go' for third person singular?","go","goes","going","went",1
+63,"Choose the correct past continuous form: 'She _____ when I called'.","was sleeping","is sleeping","slept","sleep",0
+64,"Identify the present perfect form in the following sentence.","She has finished her work.","She finishes her work.","She finished her work.","She is finishing her work.",0
+65,"Which sentence demonstrates subject-verb agreement?","They runs fast.","They run fast.","He run fast.","She run fast.",1
+66,"Select the sentence with correct degree of adjective comparison.","This is the more interesting book.","This is the most interesting book.","This is the interestingest book.","This is the interestinger book.",1
+67,"Which sentence uses a correct question tag?","You're coming, isn't you?","You're coming, isn't it?","You're coming, aren't you?","You're coming, doesn't you?",2
+68,"Choose the correct form: 'He _____ (to be) at home last night.'","is","was","were","be",1
+69,"Identify the future perfect continuous tense in the following sentence.","By next year, she will have been working here for a decade.","She works here.","She will work here.","She is working here.",0
+70,"Which sentence shows correct use of a plural noun?","The childs are playing.","The children are playing.","The childrens are playing.","The child are playing.",1
+71,"Select the sentence with correct pronoun-antecedent agreement.","Every student must hand in their homework.","Every student must hand in his or her homework.","Every student must hand in their homework.","Every student must hand in our homework.",1
+72,"Which sentence is in the imperative mood?","Please close the door.","I close the door.","She closes the door.","They closed the door.",0
+73,"Choose the sentence that correctly uses the comparative degree.","He is more tall than his brother.","He is taller than his brother.","He is tall than his brother.","He is tallest than his brother.",1
+74,"Which sentence is in the future continuous tense?","She will be studying tomorrow.","She is studying tomorrow.","She studies tomorrow.","She studied tomorrow.",0
+75,"Select the sentence that correctly employs the simple future tense.","They will finish the work tomorrow.","They finish the work tomorrow.","They finished the work tomorrow.","They finishing the work tomorrow.",0
+76,"Which sentence demonstrates the use of the superlative degree?","This is the most difficult problem.","This is more difficult problem.","This is difficultest problem.","This is most difficult problem.",0
+77,"Identify the sentence with the correct use of the present continuous tense.","He is running fast.","He run fast.","He runs fast.","He running fast.",0
+78,"Choose the correct question tag for: 'It is raining, _____?'","is it?","does it?","isn't it?","aren't it?",2
+79,"Which sentence correctly uses the present perfect continuous tense?","They have been waiting for an hour.","They waited for an hour.","They are waiting for an hour.","They wait for an hour.",0
+80,"Select the sentence with correct subject-verb agreement in a compound subject.","Tom and Jerry is funny.","Tom and Jerry are funny.","Tom and Jerry be funny.","Tom and Jerry was funny.",1
+81,"Choose the correct punctuation: 'Its a beautiful day'","It's a beautiful day","Its' a beautiful day","Its a beautiful day","It is a beautiful day",0
+82,"Select the sentence with correct capitalization.","i went to london last summer.","I went to London last summer.","I went to london Last summer.","I went to London last Summer.",1
+83,"Identify the error in: 'He dont like playing football.'","dont","like","playing","football",0
+84,"Which sentence is correctly punctuated?","However I was tired, I went out.","However, I was tired; I went out.","However, I was tired, I went out.","However I was tired; I went out.",2
+85,"Select the correctly spelled word.","accomodate","accommodate","acommodate","accommadate",1
+86,"Identify the figurative expression in the sentence: 'He has a heart of gold.'","literal heart","heart of gold","has a","gold",1
+87,"Choose the idiom that means 'to reveal a secret'.","spill the beans","kick the bucket","hit the sack","break the ice",0
+88,"Which sentence uses language in an idiomatic manner?","It cost an arm and a leg.","It cost two dollars.","It cost a fortune.","It cost a lot.",0
+89,"Identify the ordinary usage of the word 'bank' in: 'She sat by the bank of the river.'","financial institution","river bank","both A and B","neither A nor B",1
+90,"Select the correct usage of 'affect' or 'effect' in: 'The new law will _____ the economy.'","affect","effect","both A and B","neither A nor B",0
+91,"Which sentence correctly uses a colon?","He has three hobbies; reading, writing, and painting.","He has three hobbies: reading, writing, and painting.","He has: three hobbies, reading, writing, and painting.","He has three hobbies, reading, writing, and painting.",1
+92,"Choose the sentence with correct usage of a semicolon.","She likes tea; and coffee.","She likes tea; she drinks coffee.","She likes tea, she drinks coffee.","She likes tea: she drinks coffee.",1
+93,"Identify the error in the sentence: 'Its been a long day.'","Its","been","long","day",0
+94,"Which of the following is an idiom for 'in a very short time'?","in the blink of an eye","as slow as molasses","a watched pot never boils","like a snail",0
+95,"Select the sentence that correctly uses apostrophes for possession.","The dogs tail is wagging.","The dog's tail is wagging.","The dogs' tail is wagging.","The dog's tail is wagging.",1
+96,"Choose the correctly punctuated sentence:","After dinner we went for a walk.","After dinner, we went for a walk.","After dinner, we went, for a walk.","After dinner we went, for a walk.",1
+97,"Which sentence correctly uses quotation marks?","She said, ""I am ready.""","She said ""I am ready.""","She said, I am ready.","She said, I am ready.""",0
+98,"Select the correct usage of the word 'their' in context.","Their going to the park.","They're going to the park.","There going to the park.","Their's going to the park.",1
+99,"Identify the error in the sentence: 'I could of gone if I had known.'","could of","gone","if I had known","no error",0
+100,"Choose the correctly structured sentence.","She doesn't like to play football, but she likes basketball.","She don't like to play football, but she likes basketball.","She doesn't like to play football but likes basketball.","She doesn't like to play football, but she don't like basketball.",0
